@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kiss for You 💋</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      text-align: center;
+      font-family: Arial;
+      overflow: hidden;
+      padding-top: 120px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 34px;
+    }
+
+    .kiss {
+      position: absolute;
+      font-size: 30px;
+      animation: floatUp 4s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-700px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>And here’s a big kiss from me to youuu 💋</h1>
+
+  <script>
+    function createKiss() {
+      let kiss = document.createElement("div");
+      kiss.className = "kiss";
+      kiss.innerHTML = "💋";
+      kiss.style.left = Math.random() * 100 + "vw";
+      kiss.style.bottom = "0px";
+      kiss.style.animationDuration = (2 + Math.random() * 3) + "s";
+      document.body.appendChild(kiss);
+
+      setTimeout(() => kiss.remove(), 4000);
+    }
+
+    // kisses start as soon as page opens
+    setInterval(createKiss, 300);
+  </script>
+
+</body>
+</html>
